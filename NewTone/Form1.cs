@@ -54,7 +54,7 @@ namespace NewTone
                         ((Convert.ToDouble(textBox3.Text) * Convert.ToDouble(textBox1.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text) - 1)) + (Convert.ToDouble(textBox4.Text) * Convert.ToDouble(textBox2.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text) - 1)));
                             x = x - otvet;
                             break;
-                    }
+                    } 
                 }
                 listBox1.Items.Add(x.ToString());
             }
