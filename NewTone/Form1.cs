@@ -25,12 +25,36 @@ namespace NewTone
                 int j = Convert.ToInt32(textBox6.Text);
                 double x = Convert.ToInt32(textBox7.Text);
                 double otvet = 0;
+                string comb = comboBox1.Text + comboBox2.Text;
                 for (int i = 1; i <= j; i++)
                 {
-                    otvet =(Convert.ToDouble(textBox3.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text)) - Convert.ToDouble(textBox4.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text)) - Convert.ToDouble(textBox5.Text))
+                    switch(comb)
+                    {
+                        case "--" :
+                            otvet = (Convert.ToDouble(textBox3.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text)) - Convert.ToDouble(textBox4.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text)) - Convert.ToDouble(textBox5.Text))
                         /
-                        ((Convert.ToDouble(textBox3.Text) * Convert.ToDouble(textBox1.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text) - 1)) - (Convert.ToDouble(textBox4.Text) * Convert.ToDouble(textBox2.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text) - 1)) - Convert.ToDouble(textBox5.Text));
-                    x = x - otvet;
+                        ((Convert.ToDouble(textBox3.Text) * Convert.ToDouble(textBox1.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text) - 1)) - (Convert.ToDouble(textBox4.Text) * Convert.ToDouble(textBox2.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text) - 1)));
+                            x = x - otvet;
+                            break;
+                        case "-+":
+                            otvet = (Convert.ToDouble(textBox3.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text)) - Convert.ToDouble(textBox4.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text)) + Convert.ToDouble(textBox5.Text))
+                        /
+                        ((Convert.ToDouble(textBox3.Text) * Convert.ToDouble(textBox1.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text) - 1)) - (Convert.ToDouble(textBox4.Text) * Convert.ToDouble(textBox2.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text) - 1)));
+                            x = x - otvet;
+                            break;
+                        case "++":
+                            otvet = (Convert.ToDouble(textBox3.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text)) + Convert.ToDouble(textBox4.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text)) + Convert.ToDouble(textBox5.Text))
+                        /
+                        ((Convert.ToDouble(textBox3.Text) * Convert.ToDouble(textBox1.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text) - 1)) + (Convert.ToDouble(textBox4.Text) * Convert.ToDouble(textBox2.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text) - 1)));
+                            x = x - otvet;
+                            break;
+                        case "+-":
+                            otvet = (Convert.ToDouble(textBox3.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text)) + Convert.ToDouble(textBox4.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text)) - Convert.ToDouble(textBox5.Text))
+                        /
+                        ((Convert.ToDouble(textBox3.Text) * Convert.ToDouble(textBox1.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text) - 1)) + (Convert.ToDouble(textBox4.Text) * Convert.ToDouble(textBox2.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text) - 1)));
+                            x = x - otvet;
+                            break;
+                    }
                 }
                 listBox1.Items.Add(x.ToString());
             }
