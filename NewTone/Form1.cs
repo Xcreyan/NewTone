@@ -23,11 +23,11 @@ namespace NewTone
             {
                 listBox1.Items.Clear();
                 int j = Convert.ToInt32(textBox6.Text);
-                double x = Convert.ToDouble(textBox7.Text);
+                double x = Convert.ToInt32(textBox7.Text);
                 double otvet = 0;
                 for (int i = 1; i <= j; i++)
                 {
-                    otvet = (Convert.ToDouble(textBox3.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text)) - Convert.ToDouble(textBox4.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text)) - Convert.ToDouble(textBox5.Text))
+                    otvet =(Convert.ToDouble(textBox3.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text)) - Convert.ToDouble(textBox4.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text)) - Convert.ToDouble(textBox5.Text))
                         /
                         ((Convert.ToDouble(textBox3.Text) * Convert.ToDouble(textBox1.Text) * Math.Pow(x, Convert.ToDouble(textBox1.Text) - 1)) - (Convert.ToDouble(textBox4.Text) * Convert.ToDouble(textBox2.Text) * Math.Pow(x, Convert.ToDouble(textBox2.Text) - 1)) - Convert.ToDouble(textBox5.Text));
                     x = x - otvet;
